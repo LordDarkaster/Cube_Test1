@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://fc2lpb2lr7r"]
+
+[ext_resource type="Material" uid="uid://creehxxb334mx" path="res://Metal_Material.tres" id="1_lpm77"]
+[ext_resource type="Script" path="res://Scripts/static_guarda.gd" id="1_wo4vm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eu42r"]
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3fkhf"]
+material = ExtResource("1_lpm77")
+
+[sub_resource type="BoxMesh" id="BoxMesh_uhcr8"]
+material = ExtResource("1_lpm77")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4ow8"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fekxf"]
+material = SubResource("StandardMaterial3D_m4ow8")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Static_Guarda" type="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_wo4vm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_eu42r")
+
+[node name="Guarda_Body" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3fkhf")
+
+[node name="Guarda_Head" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("BoxMesh_uhcr8")
+
+[node name="Guarda_Eye" type="MeshInstance3D" parent="Guarda_Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.1, 0.21)
+mesh = SubResource("BoxMesh_fekxf")
+skeleton = NodePath("../..")
+
+[node name="Guarda_Eye2" type="MeshInstance3D" parent="Guarda_Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.1, 0.21)
+mesh = SubResource("BoxMesh_fekxf")
+skeleton = NodePath("../..")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+target_position = Vector3(0, 0, 15)
+debug_shape_thickness = 5

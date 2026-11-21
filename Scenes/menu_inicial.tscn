@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://dveh51rvv6hgr"]
+
+[ext_resource type="Texture2D" uid="uid://bxjxbseuh2rkj" path="res://Menu_BG3.png" id="1_h2fi6"]
+[ext_resource type="Script" path="res://Scenes/start.gd" id="2_xc635"]
+[ext_resource type="Script" path="res://Scenes/exit.gd" id="3_slddc"]
+
+[node name="Menu_Inicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h2fi6")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.5
+offset_top = 50.0
+offset_right = 42.5
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "CUBE_TEST"
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -148.0
+offset_right = 100.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start
+"
+script = ExtResource("2_xc635")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -73.0
+offset_right = 100.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit
+"
+script = ExtResource("3_slddc")
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
