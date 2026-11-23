@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dveh51rvv6hgr"]
+[gd_scene format=3 uid="uid://dveh51rvv6hgr"]
 
 [ext_resource type="Texture2D" uid="uid://bxjxbseuh2rkj" path="res://Menu_BG3.png" id="1_h2fi6"]
-[ext_resource type="Script" path="res://Scenes/start.gd" id="2_xc635"]
-[ext_resource type="Script" path="res://Scenes/exit.gd" id="3_slddc"]
+[ext_resource type="Script" uid="uid://dqb0sx1c72cuu" path="res://Scenes/start.gd" id="2_xc635"]
+[ext_resource type="Script" uid="uid://bjoi04ccg6u5" path="res://Scenes/exit.gd" id="3_slddc"]
 
-[node name="Menu_Inicial" type="Control"]
+[node name="Menu_Inicial" type="Control" unique_id=2126035869]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2101245535]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ grow_vertical = 2
 texture = ExtResource("1_h2fi6")
 expand_mode = 3
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2105787233]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -37,7 +37,7 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/font_size = 60
 text = "CUBE_TEST"
 
-[node name="Start" type="Button" parent="."]
+[node name="Start" type="Button" parent="." unique_id=165353379]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -54,7 +54,7 @@ text = "Start
 "
 script = ExtResource("2_xc635")
 
-[node name="Exit" type="Button" parent="."]
+[node name="Exit" type="Button" parent="." unique_id=2131895235]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
